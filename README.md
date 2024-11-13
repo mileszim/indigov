@@ -9,6 +9,20 @@ To run the project:
 
 Core implementation is in [src/index.ts](src/index.ts).
 
+The project is also deployed at: https://indigov.zim.dev/constituents
+
+#### Table of Contents
+
+- [API](#api)
+  - [List constituents](#list-constituents)
+  - [Create a new constituent](#create-a-new-constituent)
+  - [Export constituents as CSV](#export-constituents-as-csv)
+- [Thought Process and Spec](#thought-process-and-spec)
+  - [1. List all the constituents that are currently in the system](#1-list-all-the-constituents-that-are-currently-in-the-system)
+  - [2. Submit new constituent contact data (without creating duplicates)](#2-submit-new-constituent-contact-data-without-creating-duplicates)
+  - [3. Export a csv file of constituent contact data filtered by sign up time](#3-export-a-csv-file-of-constituent-contact-data-filtered-by-sign-up-time)
+- [Implementation](#implementation)
+
 ## API
 
 ### List constituents
@@ -136,3 +150,4 @@ What makes sense for this project is:
 - [vitest](https://vitest.dev) for testing
 
 Cloudflare Workers provides [D1](https://developers.cloudflare.com/d1/) as a SQLite service, and Hono was built natively to work with Cloudflare Workers. This lets me leverage their [wrangler](https://developers.cloudflare.com/workers/wrangler/) project tool to manage project structure, local development, and testing tooling.
+
