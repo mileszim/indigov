@@ -1,0 +1,25 @@
+{
+  "name": "indigov",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "test": "vitest --run",
+    "migrate": "wrangler d1 migrations apply indigov --local",
+    "generate-seeds": "node bin/generate-seeds.js",
+    "remove-db": "rm ./.wrangler/state/v3/d1/miniflare-D1DatabaseObject/*",
+    "reset-db": "npm run remove-db && npm run generate-seeds && npm run migrate"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.4.1",
+    "hono": "^4.6.9",
+    "ulid-workers": "^2.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.27",
+    "@cloudflare/workers-types": "^4.20241106.0",
+    "@faker-js/faker": "^9.2.0",
+    "vitest": "^2.1.4",
+    "wrangler": "^3.83.0"
+  }
+}

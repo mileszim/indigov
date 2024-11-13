@@ -1,0 +1,19 @@
+name = "indigov"
+main = "src/index.ts"
+compatibility_date = "2024-11-12"
+compatibility_flags = [ "nodejs_compat" ]
+workers_dev = true
+
+routes = [
+  { pattern = "indigov.zim.dev", custom_domain = true }
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "indigov"
+database_id = "3472e760-9065-42cc-ad4c-300150cb6cd2"
+preview_database_id = "local-test-db"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
